@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"reflect"
 )
 
 var println = fmt.Println
@@ -19,4 +20,13 @@ func main() {
 	} else {
 		log.Fatal(err)
 	}
+
+	// screw styling, I like snake casing
+	var v_name string = "Joe"
+	// or
+	v_last_name := "Fitz"
+
+	println("Hello", v_name, v_last_name)
+	var gorilla rune = '🦍'
+	println(reflect.TypeOf(gorilla))
 }
