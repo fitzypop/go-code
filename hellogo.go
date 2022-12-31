@@ -27,6 +27,6 @@ func main() {
 	v_last_name := "Fitz"
 
 	println("Hello", v_name, v_last_name)
-	var gorilla rune = '🦍'
+	gorilla := '🦍'
 	println(reflect.TypeOf(gorilla))
 }
