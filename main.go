@@ -10,7 +10,7 @@ import (
 
 var println = fmt.Println
 
-func main() {
+func HELLO_GO() {
 	println("Hello Go!")
 	println("What is your name?")
 	reader := bufio.NewReader(os.Stdin)
@@ -29,4 +29,13 @@ func main() {
 	println("Hello", v_name, v_last_name)
 	gorilla := '🦍'
 	println(reflect.TypeOf(gorilla))
+}
+
+func GIN_API() {
+
+}
+
+func main() {
+	// HELLO_GO()
+	GIN_API()
 }
