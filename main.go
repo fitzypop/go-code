@@ -11,11 +11,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-var println = fmt.Println
-
 func HELLO_GO() {
-	println("Hello Go!")
-	println("What is your name?")
+	fmt.Println("Hello Go!")
+	fmt.Println("What is your name?")
 	reader := bufio.NewReader(os.Stdin)
 	name, err := reader.ReadString('\n')
 	if err == nil {
@@ -36,16 +34,11 @@ func HELLO_GO() {
 
 func GIN_API() {
 	r := gin.Default()
-	r.GET("/docs/*any", ginSwagger)
+	// r.GET("/docs/*any", ginSwagger)
 	r.GET("/ping", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"message": "pong",
 		})
 	})
 	r.Run() // 0.0.0.0:8080
-}
-
-func main() {
-	// HELLO_GO()
-	GIN_API()
 }
