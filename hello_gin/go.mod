@@ -1,4 +1,4 @@
-module hello_go
+module github.com/fitzypop/go_code/hello_gin
 
 go 1.21.2
 

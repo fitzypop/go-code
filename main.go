@@ -4,11 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"log"
-	"net/http"
 	"os"
 	"reflect"
-
-	"github.com/gin-gonic/gin"
 )
 
 func HELLO_GO() {
@@ -32,13 +29,6 @@ func HELLO_GO() {
 	println(reflect.TypeOf(gorilla))
 }
 
-func GIN_API() {
-	r := gin.Default()
-	// r.GET("/docs/*any", ginSwagger)
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "pong",
-		})
-	})
-	r.Run() // 0.0.0.0:8080
+func main() {
+	HELLO_GO()
 }
