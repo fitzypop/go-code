@@ -1,4 +1,4 @@
-package hello_gin
+package helloGin
 
 import (
 	"net/http"

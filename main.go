@@ -10,25 +10,24 @@ import (
 
 func HELLO_GO() {
 	fmt.Println("Hello Go!")
+}
+func WHATS_YOUR_NAME() {
 	fmt.Println("What is your name?")
 	reader := bufio.NewReader(os.Stdin)
 	name, err := reader.ReadString('\n')
 	if err == nil {
-		println("Hello", name)
+		fmt.Println("Hello", name)
 	} else {
 		log.Fatal(err)
 	}
-
-	// screw styling, I like snake casing
-	var v_name string = "Joe"
-	// or
-	v_last_name := "Fitz"
-
-	println("Hello", v_name, v_last_name)
+}
+func GORILLA() {
 	gorilla := '🦍'
-	println(reflect.TypeOf(gorilla))
+	fmt.Printf("gorilla: %v %v", gorilla, reflect.TypeOf(gorilla))
 }
 
 func main() {
 	HELLO_GO()
+	go GORILLA()
+	WHATS_YOUR_NAME()
 }
