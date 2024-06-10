@@ -4,8 +4,11 @@ import (
 	"bufio"
 	"fmt"
 	"log"
+	"net/http"
 	"os"
 	"reflect"
+
+	"github.com/gin-gonic/gin"
 )
 
 var println = fmt.Println
@@ -32,7 +35,14 @@ func HELLO_GO() {
 }
 
 func GIN_API() {
-
+	r := gin.Default()
+	r.GET("/docs/*any", ginSwagger)
+	r.GET("/ping", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "pong",
+		})
+	})
+	r.Run() // 0.0.0.0:8080
 }
 
 func main() {
